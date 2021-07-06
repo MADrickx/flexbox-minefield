@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+html {
+  font-size: 16px;
+  font-family: "Press Start 2P", cursive;
+}
+
+h1 {
+  text-align: center;
+}
+
+.minesweep {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.minesweep-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border: 5px ridge blue;
+  max-width: 75vw;
+  max-height: 75vw;
+}
+
+.minesweep-grid {
+  display: flex;
+  align-items: stretch;
+  width: 12.5%;
+  justify-content: center;
+  flex-basis: 12.5%;
+  background-color: lightcyan;
+  border: 1px dashed cyan;
+  box-sizing: border-box;
+  padding: 1rem;
+  position: relative;
+}
+
+.un, .deux, .trois, .bombe, .vide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.un::after {
+  content: "1";
+  font-size: 1.5vw;
+}
+
+.deux::after {
+  content: "2";
+  color: red;
+  font-size: 1.5vw;
+}
+
+.trois::after {
+  content: "3";
+  color: blue;
+  font-size: 1.5vw;
+}
+
+.vide::after {
+  content: "v";
+  color: transparent;
+  font-size: 1.5vw;
+}
+
+.bombe {
+  content: url(../../img/bomb-solid.svg);
+  width: 100%;
+  color: orangered;
+}
+
+.masked {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: darkcyan;
+  border: 3px ridge cyan;
+  display: block;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+}
+.masked:hover {
+  opacity: 0;
+  transition: 0.2s ease-in;
+}
+
+@media screen and (min-width: 768px) {
+  .minesweep-container {
+    max-width: 50vw;
+    max-height: 50vw;
+  }
+}
+@media screen and (min-width: 960px) {
+  .minesweep-container {
+    max-width: 45vw;
+    max-height: 45vw;
+  }
+}
+
+/*# sourceMappingURL=screen.css.map */
